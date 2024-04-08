@@ -34,7 +34,7 @@ spring:
     name: rocketmq-dashboard
 
 logging:
-  config: classpath:logback.xml
+  config: classpath:logback-spring.xml
 
 rocketmq:
   config:

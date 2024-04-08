@@ -17,6 +17,10 @@
   -->
 
 <configuration>
+	<springProperty scope="context" name="defaultLevel"  source="logback.default-level" defaultValue="INFO"/>
+
+	<property name="DEF_LEVEL" value="${defaultLevel}"/>
+
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder charset="UTF-8">
 			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %p %t - %m%n</pattern>
@@ -42,7 +46,7 @@
 		</encoder>
 	</appender>
 
-	<root level="INFO">
+	<root level="${DEF_LEVEL}">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>
