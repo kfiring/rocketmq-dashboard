@@ -15,9 +15,10 @@
 # limitations under the License.
 #
 
-FROM java:8
+# FROM java:8
+FROM ccr.ccs.tencentyun.com/gongjiang/openjre17
 VOLUME /tmp
 ADD rocketmq-dashboard-*.jar rocketmq-dashboard.jar
 RUN sh -c 'touch /rocketmq-dashboard.jar'
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar /rocketmq-dashboard.jar" ]
+ENTRYPOINT [ "sh", "-c", "/jre/bin/java $JAVA_OPTS -jar /rocketmq-dashboard.jar" ]
